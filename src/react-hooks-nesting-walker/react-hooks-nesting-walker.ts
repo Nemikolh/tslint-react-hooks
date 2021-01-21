@@ -23,6 +23,7 @@ import { ERROR_MESSAGES } from './error-messages';
 import { isBinaryConditionalExpression } from './is-binary-conditional-expression';
 import { isComponentOrHookIdentifier } from './is-component-or-hook-identifier';
 import { isReactComponentDecorator } from './is-react-component-decorator';
+import { isMobxObserverDecorator } from './is-mobx-observer-decorator';
 import { findAncestorFunction } from './find-ancestor-function';
 import { FunctionNode, isFunctionNode } from './function-node';
 import { findClosestAncestorNode } from './find-closest-ancestor-node';
@@ -186,6 +187,13 @@ export class ReactHooksNestingWalker extends RuleWalker {
       if (
         isCallExpression(ancestor.parent) &&
         isReactComponentDecorator(ancestor.parent.expression)
+      ) {
+        return;
+      }
+
+      if (
+        isCallExpression(ancestor.parent) &&
+        isMobxObserverDecorator(ancestor.parent.expression)
       ) {
         return;
       }
