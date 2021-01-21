@@ -1,5 +1,5 @@
 {
-  "name": "tslint-react-hooks",
+  "name": "@nemikolh/tslint-react-hooks",
   "version": "2.2.2",
   "description": "TSLint rule that enforces the Rules of Hooks",
   "main": "tslint-react-hooks.json",
@@ -20,6 +20,9 @@
     "react hooks",
     "tslint plugin"
   ],
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "author": "Grzegorz Rozdzialik <voreny.gelio@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -30,7 +33,7 @@
   "homepage": "https://github.com/Gelio/tslint-react-hooks",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Gelio/tslint-react-hooks"
+    "url": "https://github.com/Nemikolh/tslint-react-hooks"
   },
   "peerDependencies": {
     "tslint": "5 - 6",
